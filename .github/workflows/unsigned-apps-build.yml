@@ -15,6 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Copy frontend contents to root
+        run: |
+          shopt -s dotglob
+          cp -r frontend/* ./
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -78,6 +83,11 @@ jobs:
       datetime_tag: ${{ needs.build-ios.outputs.datetime_tag }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Copy frontend contents to root
+        run: |
+          shopt -s dotglob
+          cp -r frontend/* ./
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
