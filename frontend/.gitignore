@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Native platforms (npm cap sync will copy the web build static files to here)
+android/app/src/main/assets/public
+ios/App/App/public
